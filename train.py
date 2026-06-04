@@ -1,5 +1,5 @@
 import mlflow
-import mlflow.sklearn
+import mlflow.sklearn #sklearn help in setting up the model
 
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
