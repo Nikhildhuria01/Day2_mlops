@@ -1,8 +1,6 @@
 import mlflow
-
-mlflow.set_tracking_uri("file:./mlruns")
 import mlflow.sklearn #sklearn help in setting up the model
-
+import joblib
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -46,8 +44,9 @@ with mlflow.start_run():
     # Log metric
     mlflow.log_metric("accuracy", accuracy)
 
-    # Log model artifact
-    mlflow.sklearn.log_model(model, "model")
+    # Log model artifactimport joblib
+
+    joblib.dump(model, "model.pkl")
 
     print("Training completed")
     print("Accuracy:", accuracy)
