@@ -1,4 +1,6 @@
 import mlflow
+
+mlflow.set_tracking_uri("file:./mlruns")
 import mlflow.sklearn #sklearn help in setting up the model
 
 from sklearn.datasets import load_iris
